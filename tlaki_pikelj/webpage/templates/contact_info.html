@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Contact Information</h1>
+    <address>
+        <p>{{ contact_info.address }}</p>
+        <p>Phone: {{ contact_info.phone }}</p>
+        <p>Email: <a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></p>
+    </address>
+{% endblock %}

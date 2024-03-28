@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .homepage-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  .homepage-row {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  .homepage-col-md-6 {
+    flex: 1;
+  }
+  .homepage-col-md-6:first-child {
+    animation: fadeInLeft 1s ease-out forwards;
+  }
+  
+  .homepage-col-md-6:last-child {
+    animation: fadeInRight 1s ease-out forwards;
+  }
+  .homepage-col-md-6 h1 {
+    text-overflow: ellipsis;
+    color: #073763; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  }
+  .homepage-col-md-6 p {
+    animation: textFocusIn 2s ease forwards;
+    font-weight: 400; 
+    color: #333; 
+    margin-top: 10px; 
+    font-size: large;
+  }
+  .homepage-col-md-6 .btn {
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  .homepage-col-md-6 .btn-primary {
+    background-color: #f0ad4e;
+  }
+  .homepage-col-md-6 .btn-secondary {
+    background-color: #5cb85c;
+  }
+  .homepage-col-md-6 .btn-primary:hover {
+    background-color: #eea236;
+    transform: translateY(-5px);
+  }
+  .homepage-col-md-6 .btn-secondary:hover {
+    background-color: #4cae4c;
+    transform: translateY(-5px);
+  }
+  .homepage-col-md-6 img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    animation: zoomIn 2s ease;
+    transition: transform 0.3s ease-in-out;
+  }
+  .homepage-col-md-6 img.img-fluid:hover {
+    transform: scale(1.03); 
+  }
+  @keyframes zoomIn {
+    from {
+      transform: scale3d(0.3, 0.3, 0.3);
+      opacity: 0;
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes textFocusIn {
+    from {
+      letter-spacing: -0.5em;
+      filter: blur(12px);
+      opacity: 0;
+    }
+    to {
+      letter-spacing: normal;
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @media (max-width: 768px) {
+    .homepage-row {
+      flex-direction: column;
+    }
+  
+    .homepage-col-md-6 {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+
+    }
+  
+    .homepage-col-md-6:first-child {
+      order: -1; 
+    }
+    
+    .homepage-col-md-6 h1, p {
+      text-align: center; 
+    }
+    .homepage-col-md-6 .btn {
+      width: 120px;
+    }
+  }
+  @media (hover: hover) {
+    .homepage-col-md-6 .btn-primary:hover {
+      background-color: #eea236;
+      transform: translateY(-5px);
+    }
+  
+    .homepage-col-md-6 .btn-secondary:hover {
+      background-color: #4cae4c;
+      transform: translateY(-5px);
+    }
+  
+    .homepage-col-md-6 img.img-fluid:hover {
+      transform: scale(1.03);
+    }
+  }
+</style>
+{% for message in messages %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<div class="homepage-container">
+  <div class="homepage-row">
+    <!-- Text (Left Side) -->
+    <div class="homepage-col-md-6">
+      <h1>Dobrodošli na naši spletni strani!</h1>
+      <p>Vaš zanesljiv partner za gradbene storitve</p>
+      <button class="btn btn-primary">Storitve</button>
+      <button class="btn btn-secondary">Naročite se</button>
+    </div>
+    <!-- Image (Right Side) -->
+    <div class="homepage-col-md-6">
+      <img src="{% static 'images/logo.jpg' %}" alt="Company Image" class="img-fluid">
+    </div>
+  </div>
+</div>
+{% endblock %}

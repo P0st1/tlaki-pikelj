@@ -1,0 +1,173 @@
+/* Resetting styles to ensure consistent behavior */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define a flex container for the entire page */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+body {
+  background-image: url('/static/images/background2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Ensure the main content grows to fill the available space */
+main {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+
+/* BASE.HTML */
+
+header {
+  background-color: rgba(43, 62, 80, 0.9); 
+}
+
+.navbar {
+  padding: 12px 0; 
+  border-bottom: solid 2px #4b4c57;
+}
+
+.navbar-brand {
+  font-size: 32px; 
+  margin-right: 32px; 
+  color: #fff; 
+  font-weight: bold; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #cbdaf8; 
+}
+
+.navbar-nav {
+  margin-left: auto; 
+}
+
+.navbar-nav .nav-item {
+  margin-left: 24px; 
+  opacity: 0; 
+  animation: fadeIn 0.8s forwards ease-out; 
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px; 
+  color: #fff; 
+  transition: 0.3s ease; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; 
+  text-decoration: none; 
+  transform: scale(1.2); 
+}
+
+.nav-item.active a {
+  font-weight: bold;  
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .navbar-brand {
+      margin-right: 0; 
+  }
+
+  .navbar-nav {
+      margin-left: 0; 
+  }
+
+  .navbar-toggler {
+      background-color: #fff; 
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  to {
+      opacity: 1; /* Set opacity to 1 for full visibility */
+  }
+}
+
+/* Footer Styles */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  border-top: solid 2px #4b4c57;
+  background-color: rgba(43, 62, 80, 0.9); 
+  color: white; 
+  padding: 30px 0; 
+}
+
+.footer-links ul,
+.footer-social-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-social-links li {
+  margin-bottom: 10px; 
+}
+
+.footer-links h5,
+.footer-social-links h5 {
+  font-weight: bold; 
+  font-size: 20px; 
+  margin-bottom: 15px; 
+}
+
+.footer-links a,
+.footer-social-links a {
+  text-decoration: none;
+  color: rgb(199, 192, 192); 
+  transition: color 0.3s; 
+}
+
+.footer-links a:hover {
+  color: #f09c2f; 
+}
+
+.footer-links li {
+  text-decoration: none;
+  color: rgb(199, 192, 192); 
+  transition: color 0.3s; 
+}
+.footer-social-links a {
+  text-decoration: none;
+  color: rgb(199, 192, 192); 
+  transition: color 0.3s; 
+}
+
+.footer-social-links a:hover {
+  transform: scale(1.1);
+}
+
+.footer-social-links .footer-fb:hover {
+  color: #007bff;
+}
+
+.footer-social-links .footer-ig:hover{
+  color: #bc34ce;
+}
+
+.footer-social-links .footer-tt:hover {
+  color: #6f3cc2;
+}
+
+/* landing page */
+.btn-primary {
+  background-color: #5cb85c;
+}
+
+

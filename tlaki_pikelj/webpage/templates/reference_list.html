@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>References</h1>
+    <ul>
+        {% for reference in references %}
+            <li>
+                <h3>{{ reference.title }}</h3>
+                <p>{{ reference.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
